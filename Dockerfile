@@ -1,4 +1,14 @@
-FROM node:alpine
-COPY . /server
+FROM node:19-alpine
+
+COPY dist /server/
+
+COPY package.json /server/
+
+COPY package-lock.json /server/
+
+
 WORKDIR /server
-CMD node dist/index.js
+
+RUN npm install
+
+CMD ["node", "index.js"]
