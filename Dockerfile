@@ -6,7 +6,6 @@ COPY package.json /server/
 
 COPY package-lock.json /server/
 
-
 WORKDIR /server
 
 RUN npm install
