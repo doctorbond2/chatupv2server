@@ -1,0 +1,23 @@
+name: Build backend
+on:
+  push:
+    branches: 
+      - main
+  pull-request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Test message
+        run: |
+        echo "hello world"
+        echo "Hello world again"
+      - name: Build backend
+        run: docker build -t chatupv2server .
