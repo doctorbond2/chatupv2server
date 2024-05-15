@@ -8,6 +8,7 @@ const ALLOWED_ORIGINS: string[] = [
   'http://localhost:5173',
   'https://chatt-upp-client.vercel.app',
   'https://*.vercel.app',
+  'http://localhost:8080',
 ];
 const app = express();
 //`${process.env.CLIENT_URL}`

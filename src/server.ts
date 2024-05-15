@@ -5,6 +5,8 @@ const ALLOWED_ORIGINS: string[] = [
   'http://localhost:5173',
   'https://chatt-upp-client.vercel.app',
   'https://*.vercel.app',
+  'http://localhost:8080',
+  'http://localhost:2077',
 ];
 const server = http.createServer(app);
 const io = new Server(server, {
@@ -21,17 +23,12 @@ const io = new Server(server, {
       'x-client-secret',
       'Authorization',
       'Admin-Authorization',
+      'Access-Control-Allow-Headers',
+      'Access-Control-Allow-Origin',
+      'Access-Control-Allow-Methods',
     ],
   },
 });
-// io.on('connection', (socket) => {
-//   console.log('connected: ', socket.id);
-//   socket.on('send_message', (data) => {
-//     console.log('correct', data);
-//     socket.emit('receive_message', data);
-//     socket.broadcast.emit('receive_message', data);
-//   });
-// });
 io.on('connection', (socket) => {
   console.log('User Connected: ' + socket.id);
   socket.on('join_room', (data) => {
