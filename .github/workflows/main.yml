@@ -1,8 +1,8 @@
 name: Build backend
 on:
-  push:
-    branches: 
-      - main
+  # push:
+  #   branches:
+  #     - main
   pull_request:
     branches:
       - main
@@ -16,6 +16,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Test message
-        run:  echo "Hello world again"
+        run: echo "Hello world again"
       - name: Build backend
         run: docker build -t chatupv2server .

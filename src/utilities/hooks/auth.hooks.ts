@@ -12,6 +12,3 @@ export async function hashHelper(this: any) {
     }
   }
 }
-const asd = () => {
-  console.log('asd');
-};
